@@ -1,0 +1,12 @@
+.recipe-card {
+  position: relative;
+  /* other styles */
+}
+
+.favorite-icon {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
