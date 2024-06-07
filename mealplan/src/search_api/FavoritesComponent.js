@@ -5,9 +5,6 @@ import RecipeCard from "./RecipeCard";
 import RecipeModel from "./RecipeModel";
 import UserContext from "../auth/UserContext";
 import "./FavoritesComponent.css";
-// import "./RecipeCard.css";
-// import "./FavoriteButton.css";
-// import "../CardComponent/RecipeCardButton.css";
 
 const FavoritesComponent = () => {
   const [recipes, setRecipes] = useState([]);

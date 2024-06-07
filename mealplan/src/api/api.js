@@ -117,6 +117,7 @@ class MealPlanApi {
   //************************************************************************************
   // From backend routes/favorites
   static async getRecipeCard(recipeId) {
+    console.log("recipeId for card:", recipeId);
     const endpoint = `favorites/${recipeId}/card`;
     const resp = await this.request(endpoint);
     console.log("API Response for getRecipeCard:", resp);

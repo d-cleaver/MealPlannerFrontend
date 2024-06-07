@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import FavoriteButton from "./FavoriteButton";
-import RecipeCardButton from "../CardComponent/RecipeCardButton";
-import MealPlanApi from "../api/api";
+// import RecipeCardButton from "../CardComponent/RecipeCardButton";
 import RecipeModel from "./RecipeModel";
 import "./RecipeCard.css";
 
 const RecipeCard = ({ recipe, isFavorite, onAddFavorite }) => {
   const [showModel, setShowModel] = useState(false);
-  const [recipeCardUrl, setRecipeCardUrl] = useState(null);
 
   const handleImageClick = () => {
     setShowModel(true);
@@ -15,22 +13,6 @@ const RecipeCard = ({ recipe, isFavorite, onAddFavorite }) => {
 
   const handleFavoriteChange = (newFavoriteState) => {
     onAddFavorite(recipe.id, newFavoriteState);
-  };
-
-  const handleViewRecipeCard = async () => {
-    try {
-      // Call the API to fetch the recipe card URL
-      const cardResponse = await MealPlanApi.getRecipeCard(recipe.id);
-      console.log("Recipe card URL:", cardResponse.url);
-
-      if (cardResponse.url) {
-        window.open(cardResponse.url, "_blank"); // Open the recipe card URL in a new tab
-      }
-      // Update state to store the recipe card URL
-      setRecipeCardUrl(cardResponse.url);
-    } catch (error) {
-      console.error("Error fetching recipe card:", error);
-    }
   };
 
   return (
@@ -44,7 +26,7 @@ const RecipeCard = ({ recipe, isFavorite, onAddFavorite }) => {
             isFavorite={isFavorite}
             onFavoriteChange={handleFavoriteChange}
           />
-          <RecipeCardButton onClick={handleViewRecipeCard} />
+          {/* <RecipeCardButton recipeId={recipe.id} /> */}
         </div>
       </div>
       <div>
@@ -57,11 +39,6 @@ const RecipeCard = ({ recipe, isFavorite, onAddFavorite }) => {
           />
         )}
       </div>
-      {recipeCardUrl && (
-        <div className="recipe-card-image">
-          <img src={recipeCardUrl} alt="Recipe Card" />
-        </div>
-      )}
     </div>
   );
 };
