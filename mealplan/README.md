@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Flavorite Recipes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Website URL: [https://mealplannerfrontend2.onrender.com/]
 
-## Available Scripts
+### Description
 
-In the project directory, you can run:
+Flavorite Recipes is a recipe search website. It allows users to search through our database of recipes,
+favorite whichever recipes the user likes, and compiles those favorites in one spot for easier access.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Features Implemented
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Feature 1:** User sign-up / login abilities.
+_Reason:_ This is so each user can have their own set of favorite recipes. Users can edit their profile
+in the Profile tab, with the exception of changing their username or password. Password is required to save changes.
+**Feature 2:** Search through Spoonacular recipe database.
+_Reason:_ This is **the** core feature of the site. Users can search through our database to find recipes they like.
+**Feature 3:** Favorites
+_Reason:_ The secondary feature of the site. This allows users to select favorite recipes, and have access to
+their individual favorite recipes with the click of a button. The favorite state persists throughout the site,
+allowing users full control of their favorites, with access to toggle a favorite on or off anywhere a recipe appears.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tests
 
-### `npm run build`
+##### Frontend Tests
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+_Tests for the components are located in the following files:_
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- FavoritesComponent.test.js
+- RecipeCard.test.js
+- RecipeModel.test.js
+- SearchComponent.test.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**To run the frontend tests:**
 
-### `npm run eject`
+- Clone the repository.
+- Navigate to the project directory in the terminal.
+- Ensure you are using Node 16.20.2 (nvm use Node 16.20.2)
+- Run npm test to execute the tests.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##### Backend Tests
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+_Tests for the backend are located in the tests directory._
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**To run the backend tests:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Clone the repository.
+- Navigate to the backend directory in the terminal.
+- Ensure you are using Node 16.20.2 (nvm use Node 16.20.2)
+- Run npm test to execute the tests.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Standard User Flow
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Home Page:** Upon visiting the site, users are directed to the site's homepage and are directed towards the search feature.
+- **Search:** Users are greeted with a search bar to search for recipes. Users enter a search term and click the submit button.
+- **Results:** The site displays a list of recipes based on the search term. Users can click on a recipe to view more details.
+- **Recipe Details:** Users can view detailed information about the selected recipe, including a summary and image.
+- **Favorites:** Users can mark recipes as favorites, which are saved for future reference. Favorite state persists throughout the site.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### API Notes
 
-### Analyzing the Bundle Size
+The website utilizes the Spoonacular API for fetching recipe data. This API provides comprehensive recipe information,
+including titles, images, and summaries. The website also has a database to store user profile information as well as
+user favorite recipes.
+**Spoonacular Docs:** [https://spoonacular.com/food-api/docs]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+##### Technology Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Node Version:** 16.20.2
+**Frontend:** React.js
+**Backend:** Node.js
+**API Integration:** Axios
+**Testing:** Jest, react-testing-library, SuperTest
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+###### Additional Notes
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_The Spoonacular API has many additional endpoints to be utilized. This site was designed with scalibility
+in mind. I have designed re-usable components that could be utilized when creating additional functionality.
+The overall goal was to make the code as clean as possible, allowing anyone to easily add features and decipher it._
