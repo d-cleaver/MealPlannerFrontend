@@ -1,0 +1,80 @@
+:root {
+  --dark-green: #040f0f;
+  --medium-green: #1c4e23;
+  --grey: #656665;
+  --light-green: #46eb6f;
+  --light-grey: #e8e8e9;
+}
+
+.LoginForm {
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--light-green);
+}
+
+.LoginForm .container {
+  text-align: left;
+  margin-bottom: 20px;
+  color: var(--dark-green);
+}
+
+.LoginForm h3 {
+  margin-bottom: 1rem;
+}
+
+.LoginForm .card {
+  margin-top: 1rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: var(--dark-green);
+  color: var(--light-green);
+}
+
+.LoginForm .card-body {
+  padding: 2rem;
+}
+
+.LoginForm .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.LoginForm .form-control {
+  background-color: var(--light-grey);
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem;
+}
+
+.LoginForm .btn-primary {
+  background-color: var(--medium-green);
+  color: var(--light-grey);
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+}
+
+.LoginForm .btn-primary:hover {
+  background-color: var(--grey);
+}
+
+.LoginForm .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.LoginForm .btn-primary:active {
+  background-color: var(--dark-green);
+}
+.login-heading {
+  font-weight: bold;
+  margin-top: 20px;
+  /* margin-bottom: 20px; */
+  padding-left: 140px;
+}
+h2 {
+  font-weight: 750;
+  color: var(--medium-green);
+}

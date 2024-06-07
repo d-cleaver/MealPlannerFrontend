@@ -1,24 +1,12 @@
-.recipe-card-button-container {
-  display: inline-block;
-  margin-top: 10px;
-}
-
 .recipe-card-button {
-  background-color: #fff;
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  background-color: var(--medium-green);
+  color: var(--light-grey);
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  padding: 5px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .recipe-card-button:hover {
-  background-color: #f0f0f0;
-}
-
-.recipe-card-button:focus {
-  outline: none;
+  background-color: var(--grey);
 }

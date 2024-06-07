@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Alert from "../common/Alert";
+import "./SignupForm.css";
 
 /** Signup form.
  *
@@ -43,7 +44,7 @@ function SignupForm({ signup }) {
     evt.preventDefault();
     let result = await signup(formData);
     if (result.success) {
-      history.push("/search");
+      history.push("/");
     } else {
       setFormErrors(result.errors);
     }
@@ -58,7 +59,9 @@ function SignupForm({ signup }) {
   return (
     <div className="SignupForm">
       <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-        <h2 className="mb-3">Sign Up</h2>
+        <div className="signup-heading">
+          <h2>Sign Up</h2>
+        </div>
         <div className="card">
           <div className="card-body">
             <form onSubmit={handleSubmit}>

@@ -1,6 +1,63 @@
+/* Remove top and bottom padding of the body */
+body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Colors based on the provided palette */
+:root {
+  --dark-green: #040f0f;
+  --medium-green: #1c4e23;
+  --grey: #656665;
+  --light-green: #46eb6f;
+  --light-grey: #e8e8e9;
+}
+
 .Homepage {
-  /* put around the vertical center of page */
-  height: calc(100vh - 150px);
+  margin-top: -40px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: var(--light-green);
+}
+
+.Homepage .container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--dark-green);
+}
+
+.Homepage h1 {
+  margin-bottom: 1rem;
+  color: var(--dark-green);
+}
+
+.Homepage .lead {
+  margin-bottom: 2rem;
+  color: var(--medium-green);
+  font-weight: 700;
+}
+
+.Homepage .btn-primary,
+.Homepage .btn-success {
+  margin: 0.5rem;
+  color: var(--light-grey);
+  background-color: var(--medium-green);
+  border: none;
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.Homepage .btn-primary:hover,
+.Homepage .btn-success:hover {
+  background-color: var(--dark-green);
+  color: var(--light-grey);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.Homepage .btn-success {
+  margin-top: 1rem; /* Adds spacing between the welcome message and the link */
 }

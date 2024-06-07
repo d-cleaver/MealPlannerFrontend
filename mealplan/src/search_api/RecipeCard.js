@@ -36,18 +36,16 @@ const RecipeCard = ({ recipe, isFavorite, onAddFavorite }) => {
   return (
     <div className="recipe-card">
       <img src={recipe.image} alt={recipe.title} onClick={handleImageClick} />
-      <div className="recipe-card-title">
-        <h3>{recipe.title}</h3>
-      </div>
-      <div>
-        <FavoriteButton
-          recipeId={recipe.id}
-          isFavorite={isFavorite}
-          onFavoriteChange={handleFavoriteChange}
-        />
-      </div>
-      <div>
-        <RecipeCardButton onClick={handleViewRecipeCard} />
+      <div className="recipe-card-content">
+        <h3 className="recipe-card-title">{recipe.title}</h3>
+        <div className="recipe-card-buttons">
+          <FavoriteButton
+            recipeId={recipe.id}
+            isFavorite={isFavorite}
+            onFavoriteChange={handleFavoriteChange}
+          />
+          <RecipeCardButton onClick={handleViewRecipeCard} />
+        </div>
       </div>
       <div>
         {showModel && (
@@ -59,7 +57,6 @@ const RecipeCard = ({ recipe, isFavorite, onAddFavorite }) => {
           />
         )}
       </div>
-      {/* Render the recipe card image if URL is available */}
       {recipeCardUrl && (
         <div className="recipe-card-image">
           <img src={recipeCardUrl} alt="Recipe Card" />

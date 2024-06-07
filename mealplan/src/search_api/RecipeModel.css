@@ -15,6 +15,7 @@
   transform: translate(-50%, -50%);
   z-index: 2;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .model-header {
@@ -22,11 +23,30 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--medium-green);
+  padding: 1em;
+  border-radius: 8px;
+}
+
+.model-header h2 {
+  color: var(--light-grey);
+  text-align: center;
+}
+
+.close-btn {
+  font-size: 24px;
+  color: var(--light-grey);
+  cursor: pointer;
+  transition: transform 0.3s; /* Add transition effect */
+}
+
+.close-btn:hover {
+  transform: scale(1.5); /* Increase size on hover */
 }
 
 .model-content {
   background-color: white;
   padding: 2em;
-  border-radius: 4px;
+  border-radius: 0 0 4px 4px; /* Rounded bottom corners */
   max-width: 500px;
 }

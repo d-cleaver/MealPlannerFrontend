@@ -1,0 +1,49 @@
+:root {
+  --dark-green: #040f0f;
+  --medium-green: #1c4e23;
+  --grey: #656665;
+  --light-green: #46eb6f;
+  --light-grey: #e8e8e9;
+}
+
+.Favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--light-green);
+  padding: 20px;
+  margin-top: -40px;
+  width: 100%;
+}
+
+.Favorites .Favorites-list {
+  text-align: left;
+  color: var(--dark-green);
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  background-color: var(--light-green);
+}
+
+.Favorites .recipe-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.Favorites .lead {
+  color: var(--dark-green);
+  text-align: center;
+}
+
+.Favorites button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--dark-green);
+  color: var(--light-grey);
+  cursor: pointer;
+}

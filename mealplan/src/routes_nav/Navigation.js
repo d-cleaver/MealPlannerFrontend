@@ -57,7 +57,7 @@ function Navigation({ logout }) {
   return (
     <nav className="Navigation navbar navbar-expand-md">
       <Link className="navbar-brand" to="/">
-        Meal Plan App
+        Flavorite Flavors
       </Link>
       {currentUser ? loggedInNav() : loggedOutNav()}
     </nav>

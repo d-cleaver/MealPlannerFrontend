@@ -1,0 +1,17 @@
+.favorite-button {
+  width: 40px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  line-height: 100px; /* Vertically center the heart icon */
+  margin-top: 40px; /* Adjust vertical spacing as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.favorite-button img {
+  width: 100%;
+  height: 100%;
+}

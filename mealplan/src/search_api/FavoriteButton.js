@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import MealPlanApi from "../api/api";
 import UserContext from "../auth/UserContext";
+import "./FavoriteButton.css";
 
 const FavoriteButton = ({ recipeId, isFavorite, onFavoriteChange }) => {
   const { currentUser } = useContext(UserContext);
@@ -27,9 +28,12 @@ const FavoriteButton = ({ recipeId, isFavorite, onFavoriteChange }) => {
   return (
     <div className="favorite-icon" onClick={handleFavoriteClick}>
       {isFavorite ? (
-        <AiFillHeart color="red" />
+        <AiFillHeart color="red" style={{ width: "40px", height: "40px" }} />
       ) : (
-        <AiOutlineHeart color="grey" />
+        <AiOutlineHeart
+          color="grey"
+          style={{ width: "40px", height: "40px" }}
+        />
       )}
     </div>
   );

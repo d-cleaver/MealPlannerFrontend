@@ -1,0 +1,85 @@
+:root {
+  --dark-green: #040f0f;
+  --medium-green: #1c4e23;
+  --grey: #656665;
+  --light-green: #46eb6f;
+  --light-grey: #e8e8e9;
+}
+
+.Search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--light-green);
+  padding: 20px;
+  margin-top: -40px;
+  width: 100%; /* Ensure it takes the full width of the viewport */
+}
+
+.Search .container {
+  text-align: left;
+  color: var(--dark-green);
+  max-width: 500px; /* Adjust the width as needed */
+  width: 100%;
+  padding: 20px;
+  background-color: var(--light-green); /* Ensure consistency with the page */
+}
+
+.Search form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.Search input[type="text"] {
+  width: 300px;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--light-grey);
+  margin-right: 10px;
+  color: var(--dark-green);
+}
+
+.Search button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--dark-green);
+  color: var(--light-grey);
+  cursor: pointer;
+}
+
+.Search button:hover {
+  background-color: var(--grey);
+}
+
+.Search .Search-list {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.Search .view-more-button {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--dark-green);
+  color: var(--light-grey);
+  text-align: center;
+  cursor: pointer;
+}
+
+.Search .view-more-button:hover {
+  background-color: var(--grey);
+}
+
+.Search .lead {
+  color: var(--dark-green);
+  text-align: center;
+}

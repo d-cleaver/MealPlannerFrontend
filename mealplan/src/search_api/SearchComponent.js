@@ -4,6 +4,7 @@ import LoadingSpinner from "../common/LoadingSpinner";
 import RecipeCard from "./RecipeCard";
 import RecipeModel from "./RecipeModel";
 import UserContext from "../auth/UserContext";
+import "./SearchComponent.css";
 
 const SearchComponent = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -86,20 +87,18 @@ const SearchComponent = () => {
   };
 
   return (
-    <div className="Search col-md-8 offset-md-2">
-      <div className="Search-list">
-        <div>
-          <form onSubmit={handleSearch}>
-            <input
-              type="text"
-              required
-              placeholder="Search For a Recipe..."
-              value={searchTerm}
-              onChange={(event) => setSearchTerm(event.target.value)}
-            />
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+    <div className="Search">
+      <div className="Search-list container">
+        <form onSubmit={handleSearch}>
+          <input
+            type="text"
+            required
+            placeholder="Search For a Recipe..."
+            value={searchTerm}
+            onChange={(event) => setSearchTerm(event.target.value)}
+          />
+          <button type="submit">Submit</button>
+        </form>
         {error && (
           <p className="lead" style={{ color: "red" }}>
             {error}
@@ -109,19 +108,20 @@ const SearchComponent = () => {
         {!loading && searchPerformed && recipes.length === 0 && (
           <p className="lead">Sorry, no results were found!</p>
         )}
-        {!loading &&
-          recipes.length > 0 &&
-          recipes.map((recipe) => (
-            <div key={recipe.id}>
+        <div className="recipe-cards-container">
+          {!loading &&
+            recipes.length > 0 &&
+            recipes.map((recipe) => (
               <RecipeCard
+                key={recipe.id}
                 recipe={recipe}
                 onClick={() => setSelectedRecipe(recipe)}
                 isFavorite={favorites.has(recipe.id)}
                 onAddFavorite={handleAddFavorite}
                 favorites={favorites}
               />
-            </div>
-          ))}
+            ))}
+        </div>
         {searchPerformed && recipes.length > 0 && (
           <button className="view-more-button" onClick={handleViewMoreClick}>
             View More

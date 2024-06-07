@@ -19,14 +19,20 @@ function Homepage() {
   return (
     <div className="Homepage">
       <div className="container text-center">
-        <h1 className="mb-4 font-weight-bold">Meal Plan App</h1>
-        <p className="lead">
-          All the recipes you need in one, convenient place.
-        </p>
+        <h1 className="mb-4 font-weight-bold">Flavorite Flavors</h1>
+        <p className="lead">"Favorite Flavors, Every Time!"</p>
         {currentUser ? (
-          <h2>
-            Welcome Back, {currentUser.firstName || currentUser.username}!
-          </h2>
+          <>
+            <h2>
+              Welcome Back, {currentUser.firstName || currentUser.username}!
+            </h2>
+            <Link
+              className="btn btn-success font-weight-bold mt-3"
+              to="/search"
+            >
+              Take Me To FlavorTown!!
+            </Link>
+          </>
         ) : (
           <p>
             <Link className="btn btn-primary font-weight-bold mr-3" to="/login">

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Alert from "../common/Alert";
+import "./LoginForm.css";
 
 /** Login form.
  *
@@ -40,7 +41,7 @@ function LoginForm({ login }) {
     evt.preventDefault();
     let result = await login(formData);
     if (result.success) {
-      history.push("/search");
+      history.push("/");
     } else {
       setFormErrors(result.errors);
     }
@@ -55,8 +56,9 @@ function LoginForm({ login }) {
   return (
     <div className="LoginForm">
       <div className="container col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-        <h3 className="mb-3">Log In</h3>
-
+        <div className="login-heading">
+          <h2>Log In</h2>
+        </div>
         <div className="card">
           <div className="card-body">
             <form onSubmit={handleSubmit}>
@@ -67,8 +69,6 @@ function LoginForm({ login }) {
                   className="form-control"
                   value={formData.username}
                   onChange={handleChange}
-                  autoComplete="username"
-                  required
                 />
               </div>
               <div className="form-group">
@@ -79,8 +79,6 @@ function LoginForm({ login }) {
                   className="form-control"
                   value={formData.password}
                   onChange={handleChange}
-                  autoComplete="current-password"
-                  required
                 />
               </div>
 
@@ -88,10 +86,7 @@ function LoginForm({ login }) {
                 <Alert type="danger" messages={formErrors} />
               ) : null}
 
-              <button
-                className="btn btn-primary float-right"
-                onSubmit={handleSubmit}
-              >
+              <button className="btn btn-primary float-right" type="submit">
                 Submit
               </button>
             </form>

@@ -1,9 +1,32 @@
-.Navigation {
-  background-color: white;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+/* Navigation.css */
+:root {
+  --dark-green: #040f0f;
+  --medium-green: #1c4e23;
+  --grey: #656665;
+  --light-green: #46eb6f;
+  --light-grey: #e8e8e9;
 }
 
-.nav-link.active {
-  font-weight: bold;
-  color: black;
+body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar {
+  background-color: var(--dark-green);
+}
+
+.navbar-brand,
+.nav-link {
+  color: var(--light-green);
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar-brand:hover,
+.nav-link:hover,
+.active {
+  background-color: var(--medium-green);
+  color: var(--light-grey);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }

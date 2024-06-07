@@ -4,6 +4,10 @@ import LoadingSpinner from "../common/LoadingSpinner";
 import RecipeCard from "./RecipeCard";
 import RecipeModel from "./RecipeModel";
 import UserContext from "../auth/UserContext";
+import "./FavoritesComponent.css";
+// import "./RecipeCard.css";
+// import "./FavoriteButton.css";
+// import "../CardComponent/RecipeCardButton.css";
 
 const FavoritesComponent = () => {
   const [recipes, setRecipes] = useState([]);
@@ -51,30 +55,31 @@ const FavoritesComponent = () => {
   };
 
   return (
-    <div className="Favorites col-md-8 offset-md-2">
+    <div className="Favorites">
       <div className="Favorites-list">
-        {loading && <LoadingSpinner />}
         {error && (
           <p className="lead" style={{ color: "red" }}>
             {error}
           </p>
         )}
+        {loading && <LoadingSpinner />}
         {!loading && recipes.length === 0 && (
           <p className="lead">You haven't added any favorites yet!</p>
         )}
-        {!loading &&
-          recipes.length > 0 &&
-          recipes.map((recipe) => (
-            <div key={recipe.id}>
+        <div className="recipe-cards-container">
+          {!loading &&
+            recipes.length > 0 &&
+            recipes.map((recipe) => (
               <RecipeCard
+                key={recipe.id}
                 recipe={recipe}
                 onClick={() => setSelectedRecipe(recipe)}
                 isFavorite={favorites.has(recipe.id)}
                 onAddFavorite={handleAddFavorite}
                 favorites={favorites}
               />
-            </div>
-          ))}
+            ))}
+        </div>
       </div>
       {selectedRecipe && (
         <RecipeModel
